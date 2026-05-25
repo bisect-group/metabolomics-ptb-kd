@@ -88,9 +88,14 @@ Python 3.10+ is recommended.
 ---
 
 ## Running the Pipeline
+Make sure the dataset files are in the same folder as the `metabolomics_pipeline.py` file. Run the following on the command line:
 
 ```bash
-cd mudar-ptb
+python pipeline/metabolomics_pipeline.py --target_col target --datasets datasets
+```
+For example, if you want to run the pipeline for the target column PTB_NEW and on the datasets [T1, T2, T3], the command would be
+
+```bash
 python pipeline/metabolomics_pipeline.py \
     --datasets T1 T2 T3 \
     --target_col PTB_NEW \
@@ -114,11 +119,11 @@ python pipeline/metabolomics_pipeline.py \
 ### Stage 1 — Conventional Methods
 
 For each dataset, an exhaustive grid search is run over:
-- **Feature selection:** Variance threshold, ANOVA F-test with FDR correction, RFECV with Random Forest
-- **Class imbalance:** None, SMOTE
+- **Feature selection:** Variance threshold, ANOVA F-test with/without FDR correction, RFECV with Random Forest, PCA, Sequential top-k features using Random Forest feature importance
+- **Class imbalance:** None, SMOTE, Class balanced weights, Random Oversampling, Random Undersampling
 - **Classifiers:** Logistic Regression, SVM, Gaussian Naive Bayes, Random Forest, XGBoost
 
-Evaluation uses stratified 5-fold CV with **average precision (AP)** as the primary metric. The optimal classification threshold is selected via Youden's J statistic. Bootstrap 95% CIs are reported for ROC-AUC, AP, F1, precision, and recall.
+Evaluation uses stratified 5-fold CV with **ROC AUC** as the primary metric. Bootstrap 95% CIs are reported for ROC-AUC, AP, F1, precision, and recall.
 
 Per-combination outputs include ROC curves, PR curves, confusion matrices, and calibration plots.
 
