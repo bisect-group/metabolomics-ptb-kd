@@ -1,4 +1,4 @@
-# MUDAR-PTB: Metabolomics-based Preterm Birth Prediction
+# Metabolomics-based Preterm Birth Prediction
 
 A two-stage ML pipeline for preterm birth (PTB) prediction using longitudinal maternal serum metabolomics data, stratified across trimesters (T1, T2, T3).
 
@@ -10,7 +10,7 @@ A two-stage ML pipeline for preterm birth (PTB) prediction using longitudinal ma
 ## Repository Structure
 
 ```
-mudar-ptb/
+metabolomics-ptb-kd/
 ├── notebooks/
 │   ├── 01_data_selection.ipynb          # Raw data filtering & metabolite column selection (MOMI-specific format)
 │   └── 02_longitudinal_data_prep.ipynb  # Train/test split, null filtering, class-conditional imputation
@@ -145,19 +145,3 @@ output/
 ├── stage2_kd_overview.png
 └── pipeline_log.txt
 ```
-
----
-
-## Citation
-
-If you use this pipeline in your work, please cite:
-
-```
-[Add your paper citation here]
-```
-
----
-
-## License
-
-[Add your license here]
