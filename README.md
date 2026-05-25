@@ -78,8 +78,7 @@ Each CSV must contain numeric metabolite feature columns plus a `PTB_NEW` binary
 ## Installation
 
 ```bash
-git clone https://github.com/<your-username>/mudar-ptb.git
-cd mudar-ptb
+git clone https://github.com/bisect-group/metabolomics-ptb-kd.git
 pip install -r requirements.txt
 ```
 
