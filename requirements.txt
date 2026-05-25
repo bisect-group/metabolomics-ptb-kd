@@ -1,0 +1,23 @@
+# Core data
+pandas>=1.5.0
+numpy>=1.23.0
+
+# Machine learning
+scikit-learn>=1.2.0
+xgboost>=1.7.0
+imbalanced-learn>=0.10.0
+statsmodels>=0.13.0
+
+# Explainability
+shap>=0.41.0
+
+# Visualization
+matplotlib>=3.6.0
+seaborn>=0.12.0
+
+# Notebooks
+jupyter>=1.0.0
+ipykernel>=6.0.0
+
+# Utilities
+scipy>=1.9.0
